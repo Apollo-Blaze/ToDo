@@ -1,0 +1,159 @@
+.to-do-list {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 8rem;
+  color: rgb(122, 80, 63);
+}
+
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: aliceblue;
+  background-color: rgba(61, 61, 61, 0.653);
+  transition: background-color 0.5s ease;
+  margin: 8px;
+}
+
+.add-button {
+  height: 70px;
+  background-color: rgba(136, 226, 104, 0.732);
+  border-radius: 100%;
+}
+
+.add-button:hover {
+  background-color: rgba(128, 186, 184, 0.668);
+}
+
+.delete-button {
+  background-color: rgba(114, 206, 80, 0.801);
+  border-radius: 8px;
+  height: 70px;
+}
+
+.delete-button:hover {
+  background-color: rgba(168, 13, 13, 0.801);
+}
+
+.move-button {
+  background-color: rgb(181, 114, 233);
+  border-radius: 100%;
+  height: 70px;
+}
+
+.move-button-clicked {
+  animation: moveButtonAnimation 0.5s;
+}
+
+.move-button:hover {
+  background-color: rgb(98, 50, 134);
+}
+
+input[type="text"] {
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid rgb(210, 207, 207);
+  border-radius: 10px;
+  color: rgb(149, 141, 141);
+  flex: 1;
+}
+
+ol {
+  list-style-type: none;
+  padding: 50px;
+  background-color: rgb(171, 224, 224);
+  border-radius: 15px;
+  box-shadow: 0px 0px 40px 6px rgb(197, 127, 215) inset;
+}
+
+li {
+  flex:1;
+  display:flex;
+  justify-content: space-between; /* Align move and delete buttons to the right */
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text {
+  text-align: left;
+  flex: 1;
+  height: auto;
+  width: auto; /* Change from 'fit-content' to 'auto' */
+  white-space: pre-wrap; /* Allow text to wrap and break at spaces */
+  transition: transform 9s ease-in-out;
+}
+
+.delete-button,
+.move-button {
+  padding: 8px, 10px;
+  font-size: 1.5rem;
+}
+
+body {
+  background-color: rgba(215, 180, 137, 0.775);
+}
+
+@keyframes moveButtonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.addSection {
+  background-color: rgb(219, 160, 220);
+  border-radius: 15px;
+  display: flex;
+  padding: 20px;
+}
+
+.to-do-list {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.task-container {
+  font-size: 2rem;
+  padding: 15px;
+  background-color: rgb(218, 218, 218);
+  margin-bottom: 20px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: center;
+  height: auto;
+  transition: transform 1s ease-in-out; /* Add transition for smooth animation */
+}
+
+.task-container {
+  font-size: 2rem;
+  padding: 15px;
+  background-color: rgb(218, 218, 218);
+  margin-bottom: 20px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: center;
+  height: auto;
+  transition: transform 10s ease-in, opacity 0.5s ease-in; /* Include opacity transition */
+  opacity: 1; /* Ensure initial opacity is set to 1 */
+}
+
+.task-container.moving {
+  transform: translateY(-20px);
+  opacity: 0; /* Set opacity to 0 for the sliding out effect */
+}
